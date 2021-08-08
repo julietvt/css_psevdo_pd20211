@@ -21,6 +21,7 @@ id - 100
 <style> - 1000
 !important - 10000
 */
+/*
 * {
   color: yellow;
   text-decoration: overline;
@@ -45,4 +46,63 @@ a {
 
 #linkId {
   color: blueviolet;
+}
+*/
+
+/*ПСЕВДОКЛАССЫ
+
+selector:pseudoclass {
+    property: value;
+    property: value;
+    property: value;
+}
+*/
+:root {
+  --first-font-size: 14px;
+  --hover-color-font: red;
+  --color-font: white;
+  --primary-color: black;
+  --second-color: blue;
+}
+
+a:link {
+  color: blue;
+}
+a:visited {
+  color: pink;
+}
+a:hover {
+  color: red;
+  font-size: 20px;
+}
+a:active {
+  color: yellow;
+}
+
+div {
+  background-color: var(--primary-color);
+  color: var(--color-font);
+  margin: 10px;
+  font-size: var(--first-font-size);
+}
+div:hover {
+  background-color: var(--second-color);
+  color: var(--hover-color-font);
+  font-size: calc(var(--first-font-size) + 5);
+}
+div.class1:hover {
+  background-color: tomato;
+  color: white;
+  font-size: 20px;
+}
+
+div.classdiv p {
+  display: none;
+  padding: 10px;
+  background-color: yellow;
+  margin-top: 20px;
+}
+div.classdiv:hover > p {
+  display: block;
+  margin-left: 20px;
 }
