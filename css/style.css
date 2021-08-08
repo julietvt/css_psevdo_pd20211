@@ -1,47 +1,93 @@
-/*
-ПСЕВДОЭЛЕМЕНТЫ
-::first-letter позволяет выбрать первую букву из текста
-::first-line стилизует первую строку текста
-::before добавляет сообщение до определенного элемента
-::after добавляет сообщение после определенного элемента
-::selection выбирает выбранные пользователем элементы
-
-selector::pseudoelement {
-    property: value;
-    property: value;
-    property: value;
-    property: value;
-    property: value;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  /*transition: 0.4s ease-in-out;*/
 }
-*/
-
-p {
-  font-size: 16px;
-  font-weight: normal;
-}
-
-p.classP::first-letter {
-  color: blue;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-p.classP::first-line {
-  text-decoration: overline;
-}
-
-/*::section color, background, cursor, outline*/
-
-p.classP::selection {
-  background-color: orangered;
+a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
   color: white;
+  position: relative;
+  background: #3c4896;
+  display: block;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  margin: 80px auto 0;
 }
-
-/*before,after  есть свойство content*/
-
-p.classP::before {
-  content: url(https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_Old-to-New-Final.gif);
+a:hover {
+  background: white;
+  border: 2px solid #3c4896;
 }
-p.classP::after {
-  content: url(https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_Old-to-New-Final.gif);
+/* скроем иконку загрузки до наведения на кнопку и текст "Скачать" после наведения на кнопку */
+span {
+  overflow: hidden;
+}
+span,
+em,
+i.fa {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 46px; /* за вычетом границ кнопки */
+}
+em {
+  top: 0;
+  font-style: normal;
+}
+i.fa {
+  top: 100%; /* смещаем вниз */
+  font-size: 30px;
+  color: #3c4896;
+}
+a:hover em {
+  top: -100%; /* смещаем вверх */
+}
+a:hover i.fa {
+  top: 0;
+}
+/* делаем подсказку прозрачной и убираем её со страницы, чтобы она не появлялась при наведении на место, где она должна появиться */
+a:before,
+a:after {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+/* стили для всплывающего блока с текстом */
+a:before {
+  content: attr(data-tooltip);
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  background: #3c4896;
+  border-radius: 5px;
+  bottom: 90px;
+  left: calc(50% - 70px);
+}
+/* стили для стрелки */
+a:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #3c4896;
+  bottom: 70px;
+  left: calc(50% - 10px);
+}
+a:hover:before,
+a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  /*transition: 0.2s ease-in-out 0.4s;*/ /* сделаем появление подсказки с задержкой */
+}
+/* добавляем эффект движения */
+a:hover:before {
+  bottom: 70px;
+}
+a:hover:after {
+  bottom: 50px;
 }
