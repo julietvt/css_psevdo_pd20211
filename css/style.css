@@ -57,6 +57,8 @@ selector:pseudoclass {
     property: value;
 }
 */
+
+/*
 :root {
   --first-font-size: 14px;
   --hover-color-font: red;
@@ -105,4 +107,32 @@ div.classdiv p {
 div.classdiv:hover > p {
   display: block;
   margin-left: 20px;
+}
+
+*/
+
+/*Псевдоклассы дочерних элементов
+
+:first-child первым дочерним элементом
+
+:last-child последним дочерним элементом
+
+:nth-child(n) дочерний элемент с номером n
+
+:nth-of-type(n) дочерний элемент определенного типа по порядку n
+*/
+
+a:first-child {
+  background-color: blue;
+}
+a:last-child {
+  background-color: red;
+}
+a:nth-child(2) {
+  color: aqua;
+  font-weight: bold;
+}
+
+a {
+  display: block;
 }
