@@ -10,35 +10,3 @@ caption {
   font-size: 20px;
   font-weight: bold;
 }
-
-/*: nth-child(n) псевдокласс
-особые значения для номера n
-even четные
-odd нечетные
-
-*/
-tr:nth-child(even) {
-  background: yellow;
-}
-
-tr:nth-child(odd) {
-  background: orchid;
-}
-
-div {
-  margin: 20px;
-  border: 1px solid blue;
-}
-
-a {
-  display: block;
-}
-
-a:nth-child(2) {
-  color: red;
-  font-weight: bold;
-}
-
-a:nth-of-type(2) {
-  background-color: yellow;
-}
