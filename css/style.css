@@ -1,138 +1,26 @@
-/*
-Селекторы
-div{}    
-.class1{}
-#id1{}
--------------
-div.class1 {}  <div class="class1">
-div > p{} для всех р на 1 уровне вложености дива
-div .class1 {} любой уровень вложености для элементов дива с классом class1
-div > .class1{} 1-й уровень вложености для элементов дива с классом class1
-div > .class1, p{} тоже но и для р
-div+div {} для соседних дивов
-*/
-
-/*КАСКАДНОСТЬ СТИЛЕЙ
-приоритет класса и id выше
-
-* - 1
-class - 10
-id - 100
-<style> - 1000
-!important - 10000
-*/
-/*
-* {
-  color: yellow;
-  text-decoration: overline;
-}
-
-li {
-  margin: 20px;
-}
-
-a {
-  color: red;
-  text-decoration: none;
-}
-
-.linkClass {
-  color: green;
-}
-
-#linkId2 {
-  color: black;
-}
-
-#linkId {
-  color: blueviolet;
-}
-*/
-
-/*ПСЕВДОКЛАССЫ
-
-selector:pseudoclass {
-    property: value;
-    property: value;
-    property: value;
-}
-*/
-
-/*
-:root {
-  --first-font-size: 14px;
-  --hover-color-font: red;
-  --color-font: white;
-  --primary-color: black;
-  --second-color: blue;
-}
-
-a:link {
-  color: blue;
-}
-a:visited {
-  color: pink;
-}
-a:hover {
-  color: red;
-  font-size: 20px;
-}
-a:active {
-  color: yellow;
-}
-
-div {
-  background-color: var(--primary-color);
-  color: var(--color-font);
-  margin: 10px;
-  font-size: var(--first-font-size);
-}
-div:hover {
-  background-color: var(--second-color);
-  color: var(--hover-color-font);
-  font-size: calc(var(--first-font-size) + 5);
-}
-div.class1:hover {
-  background-color: tomato;
-  color: white;
-  font-size: 20px;
-}
-
-div.classdiv p {
-  display: none;
+table,
+th,
+td {
+  border: 2px solid black;
   padding: 10px;
-  background-color: yellow;
-  margin-top: 20px;
-}
-div.classdiv:hover > p {
-  display: block;
-  margin-left: 20px;
+  border-collapse: collapse;
 }
 
-*/
-
-/*Псевдоклассы дочерних элементов
-
-:first-child первым дочерним элементом
-
-:last-child последним дочерним элементом
-
-:nth-child(n) дочерний элемент с номером n
-
-:nth-of-type(n) дочерний элемент определенного типа по порядку n
-*/
-
-a:first-child {
-  background-color: blue;
-}
-a:last-child {
-  background-color: red;
-}
-a:nth-child(2) {
-  color: aqua;
+caption {
+  font-size: 20px;
   font-weight: bold;
 }
 
-a {
-  display: block;
+/*: nth-child(n) псевдокласс
+особые значения для номера n
+even четные
+odd нечетные
+
+*/
+tr:nth-child(even) {
+  background: yellow;
+}
+
+tr:nth-child(odd) {
+  background: orchid;
 }
