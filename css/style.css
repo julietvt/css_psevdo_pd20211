@@ -1,33 +1,47 @@
-table,
-th,
-td {
-  border: 2px solid black;
-  padding: 10px;
-  border-collapse: collapse;
+/*
+ПСЕВДОЭЛЕМЕНТЫ
+::first-letter позволяет выбрать первую букву из текста
+::first-line стилизует первую строку текста
+::before добавляет сообщение до определенного элемента
+::after добавляет сообщение после определенного элемента
+::selection выбирает выбранные пользователем элементы
+
+selector::pseudoelement {
+    property: value;
+    property: value;
+    property: value;
+    property: value;
+    property: value;
+}
+*/
+
+p {
+  font-size: 16px;
+  font-weight: normal;
 }
 
-caption {
-  font-size: 20px;
+p.classP::first-letter {
+  color: blue;
+  font-size: 50px;
   font-weight: bold;
 }
-tfoot {
-  background-color: gray;
+
+p.classP::first-line {
+  text-decoration: overline;
 }
-thead {
-  background-color: darkslategray;
+
+/*::section color, background, cursor, outline*/
+
+p.classP::selection {
+  background-color: orangered;
   color: white;
 }
 
-tr:nth-child(odd) td:nth-child(odd) {
-  background-color: darkturquoise;
-}
-tr:nth-child(odd) td:nth-child(even) {
-  background-color: paleturquoise;
-}
+/*before,after  есть свойство content*/
 
-tr:nth-child(even) td:nth-child(odd) {
-  background-color: paleturquoise;
+p.classP::before {
+  content: url(https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_Old-to-New-Final.gif);
 }
-tr:nth-child(even) td:nth-child(even) {
-  background-color: azure;
+p.classP::after {
+  content: url(https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_Old-to-New-Final.gif);
 }
