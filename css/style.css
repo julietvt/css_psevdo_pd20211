@@ -10,3 +10,24 @@ caption {
   font-size: 20px;
   font-weight: bold;
 }
+tfoot {
+  background-color: gray;
+}
+thead {
+  background-color: darkslategray;
+  color: white;
+}
+
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: darkturquoise;
+}
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: paleturquoise;
+}
+
+tr:nth-child(even) td:nth-child(odd) {
+  background-color: paleturquoise;
+}
+tr:nth-child(even) td:nth-child(even) {
+  background-color: azure;
+}
